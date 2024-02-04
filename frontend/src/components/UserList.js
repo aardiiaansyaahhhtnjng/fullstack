@@ -45,7 +45,7 @@ const UserList = () => {
                         <td>{user.email}</td>
                         <td>{user.gender}</td>
                         <td>
-                            <Link to={`edit/${user.id}`} className='button is-small is-info'>Edit</Link>
+                            <Link to={`edit/${user.id}`} className='button is-small is-info mr-2'>Edit</Link>
                             <button onClick={() => deleteUser(user.id)} className='button is-small is-danger'>Delete</button>
                         </td>
                     </tr>))}

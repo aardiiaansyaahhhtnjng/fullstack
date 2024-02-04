@@ -6,13 +6,14 @@ import { useNavigate, useParams } from "react-router-dom"
 const EditUser = () => {
 const [name, setName] = useState("")
 const [email, setEmail] = useState("")
-const [gender, setGender] = useState("Male")
+const [gender, setGender] = useState("")
 
 const navigate = useNavigate();
 const {id} = useParams();
 
 useEffect(() => {
     getUserById();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
 
 const updateUser = async (e) => {
@@ -36,6 +37,10 @@ const updateUser = async (e) => {
     setGender(response.data.gender);
   }
 
+  const handleCancel = () => {
+    navigate(-1)
+  }
+
   return (
     <div className="columns mt-5 is-centered">
         <div className="column is-half"></div>
@@ -48,7 +53,7 @@ const updateUser = async (e) => {
                            className="input" 
                            value={name} 
                            onChange={(e) => setName(e.target.value)} 
-                           placeholder='Name'/>
+                           placeholder='Input Name'/>
                     </div>
                 </div>
 
@@ -60,7 +65,7 @@ const updateUser = async (e) => {
                            className="input" 
                            value={email} 
                            onChange={(e) => setEmail(e.target.value)}
-                           placeholder='Email'/>
+                           placeholder='Input Email'/>
                     </div>
                 </div>
 
@@ -72,15 +77,18 @@ const updateUser = async (e) => {
                                 value={gender} 
                                 onChange={(e) => setGender(e.target.value)}
                                 >
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                                    {/* <option value=" " disabled hidden>Select Gender</option> */}
+                                    <option value="Select" disabled hidden>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
                 <div className="field">
-                    <button type='submit' className='button is-success'>Update</button>
+                    <button type='submit' className='button is-success mr-2'>Update</button>
+                    <button type='button' className='button is-danger' onClick={handleCancel}>Cancel</button>
                 </div>
             </form>
     </div>
