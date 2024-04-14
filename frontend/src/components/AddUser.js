@@ -18,6 +18,7 @@ const AddUser = () => {
             return
         }
 
+        
         try{
             await axios.post('http://localhost:5000/users', {
                 name, 
