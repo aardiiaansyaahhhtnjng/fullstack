@@ -36,7 +36,7 @@ const AddUser = () => {
 
     return (
         <div className="columns mt-5 is-centered">
-            <div className="column is-half"></div>
+            <div className="column is-half">
                 <form onSubmit={saveUser}>
                     <div className="field">
                         <label className="label">Name</label>
@@ -83,6 +83,7 @@ const AddUser = () => {
                         <button type='button' className='button is-danger' onClick={handleCancel}>Cancel</button>
                     </div>
                 </form>
+            </div>
         </div>
     )
 }

@@ -43,7 +43,7 @@ const updateUser = async (e) => {
 
   return (
     <div className="columns mt-5 is-centered">
-        <div className="column is-half"></div>
+        <div className="column is-half">
             <form onSubmit={updateUser}>
                 <div className="field">
                     <label className="label">Name</label>
@@ -91,6 +91,7 @@ const updateUser = async (e) => {
                     <button type='button' className='button is-danger' onClick={handleCancel}>Cancel</button>
                 </div>
             </form>
+        </div>
     </div>
   )
 }
