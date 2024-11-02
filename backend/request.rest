@@ -1,27 +1,65 @@
+###
+//get all user
 GET http://localhost:5000/users
 
 ###
-GET http://localhost:5000/users/1
+//get single user
+GET http://localhost:5000/users/e0ce602c-4cb4-4a31-adaa-a62cb3ed2bf2
 
 ###
+//register or add user
 POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john@gamil.com",
-    "gender": "Male"
+    "name": "M Fikri",
+    "email": "admin@gmail.com",
+    "password": "admin123",
+    "confPassword": "admin123",
+    "role": "admin"
 }
 
 ###
-PATCH  http://localhost:5000/users/1
+//update user
+PATCH  http://localhost:5000/users/f8ad785e-4c0d-43bf-a093-5cc95ddc8096
 Content-Type: application/json
 
 {
-    "name": "m hallo",
-    "email": "hallo@gamil.com",
-    "gender": "Male"
+    "name": "ADMIN",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "confPassword": "admin",
+    "role": "admin"
 }
 
 ###
-DELETE   http://localhost:5000/users/2
+//delete user
+DELETE   http://localhost:5000/users/ba76f695-f60c-4cfb-bb8a-343b711bd213
+
+
+###
+//login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "adm@gmail.com",
+    "password": "admin123"
+}
+
+###
+//logout user
+DELETE  http://localhost:5000/logout
+
+
+###
+GET  http://localhost:5000/me
+
+
+###
+//get all product
+GET  http://localhost:5000/product
+
+###
+//searching
+GET http://localhost:5000/users?search_query=sura&page=0&limit=10

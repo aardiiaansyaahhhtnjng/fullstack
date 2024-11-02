@@ -1,16 +1,29 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import UserList from "./components/UserList";
-import AddUser from "./components/AddUser";
-import EditUser from "./components/EditUser";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Dashboard from './pages/Dashboard.jsx';
+import Login from './components/Login.jsx';
+import Users from './pages/Users.jsx';
+import Products from './pages/Products.jsx';
+import AddUser from './pages/AddUser.jsx';
+import EditUser from './pages/EditUser.jsx';
+import AddProduct from './pages/AddProduct.jsx';
+import EditProduct from './pages/EditProduct.jsx';
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<UserList/>} />
-        <Route path="/add" element={<AddUser/>} />
-        <Route path="edit/:id" element={<EditUser/>} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/users/add' element={<AddUser />} />
+          <Route path='/users/edit/:id' element={<EditUser />} />
+          <Route path='/products/add' element={<AddProduct />} />
+          <Route path='/products/edit/:id' element={<EditProduct />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
